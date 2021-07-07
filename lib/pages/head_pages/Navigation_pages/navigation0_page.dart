@@ -19,106 +19,108 @@ class Navigation0Page extends StatelessWidget {
   Widget build(BuildContext context) {
     final _modelProvider = Provider.of<Navigation0Provider>(context);
 
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Row(
-            children: [
-              Text("Hey, Rose",
-                  style: TextStyle(fontSize: 20, color: Colors.grey[800])),
-              Container(
-                height: 25,
-                width: 25,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/emoji_of_hand.png"))),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text("Book Doctor`s Appointment Now",
-              style: TextStyle(
-                  fontSize: 33,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  RoundButton(
-                      text: "Appointment",
-                      function: () {
-                        _modelProvider.chooseAppoinment();
-                      },
-                      isClicked: _modelProvider.getIsClickedAppoinment),
-                  RoundButton(
-                      text: "Analiytics",
-                      function: () {
-                        _modelProvider.chooseAnaliytics();
-                      },
-                      isClicked: _modelProvider.getIsClickedAnaliytics),
-                ],
-              ),
-              GestureArrowButton(
-                iconOf: Icon(
-                    Icons.arrow_forward,
-                    size: 25,
+    return SingleChildScrollView(
+          child: Container(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Row(
+              children: [
+                Text("Hey, Rose",
+                    style: TextStyle(fontSize: 20, color: Colors.grey[800])),
+                Container(
+                  height: 25,
+                  width: 25,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/emoji_of_hand.png"))),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text("Book Doctor`s Appointment Now",
+                style: TextStyle(
+                    fontSize: 33,
                     color: Colors.black,
-                  ),
-                function: () {
-                  Navigator.of(context)
-                      .pushNamed(RouteGenerator.request_appointment);
-                },
-              )
-            ],
-          ),
-          Stack(
-              alignment: Alignment.center,
-              children: _modelProvider.getCardList),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Upcoming Diet Programs",
-                  style: TextStyle(color: Colors.black, fontSize: 21)),
-              GestureArrowButton( iconOf: Icon(
-                    Icons.arrow_forward,
-                    size: 25,
-                    color: Colors.black,
-                  ),
-                function: () {
-                  
-                },
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              NavigationCardAssetText(
-                function: () {},
-                asset: "assets/navigation0_card_photo1.png",
-                description: "Personal Training Program",
-                data: "January, 19 2021",
-              ),
-              NavigationCardAssetText(
-                function: () {},
-                asset: "assets/navigation0_card_photo2.png",
-                description: "Food Diet and Nutrition Plan",
-                data: "October, 20 2021",
-              ),
-            ],
-          )
-        ]),
+                    fontWeight: FontWeight.bold)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    RoundButton(
+                        text: "Appointment",
+                        function: () {
+                          _modelProvider.chooseAppoinment();
+                        },
+                        isClicked: _modelProvider.getIsClickedAppoinment),
+                    RoundButton(
+                        text: "Analiytics",
+                        function: () {
+                          _modelProvider.chooseAnaliytics();
+                        },
+                        isClicked: _modelProvider.getIsClickedAnaliytics),
+                  ],
+                ),
+                GestureArrowButton(
+                  iconOf: Icon(
+                      Icons.arrow_forward,
+                      size: 25,
+                      color: Colors.black,
+                    ),
+                  function: () {
+                    Navigator.of(context)
+                        .pushNamed(RouteGenerator.request_appointment);
+                  },
+                )
+              ],
+            ),
+            Stack(
+                alignment: Alignment.center,
+                children: _modelProvider.getCardList),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Upcoming Diet Programs",
+                    style: TextStyle(color: Colors.black, fontSize: 21)),
+                GestureArrowButton( iconOf: Icon(
+                      Icons.arrow_forward,
+                      size: 25,
+                      color: Colors.black,
+                    ),
+                  function: () {
+                    
+                  },
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                NavigationCardAssetText(
+                  function: () {},
+                  asset: "assets/navigation0_card_photo1.png",
+                  description: "Personal Training Program",
+                  data: "January, 19 2021",
+                ),
+                NavigationCardAssetText(
+                  function: () {},
+                  asset: "assets/navigation0_card_photo2.png",
+                  description: "Food Diet and Nutrition Plan",
+                  data: "October, 20 2021",
+                ),
+              ],
+            )
+          ]),
+        ),
       ),
     );
   }
@@ -158,10 +160,16 @@ class Navigation0AppBar extends StatelessWidget {
               SizedBox(
                 width: 32,
               ),
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 25,
-                backgroundImage: AssetImage("assets/avatar_niger_image.jpg"),
+              
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(RouteGenerator.my_profile_page);
+                },
+                              child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/avatar_niger_image.jpg"),
+                ),
               )
             ],
           )

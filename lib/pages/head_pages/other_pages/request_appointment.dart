@@ -24,6 +24,7 @@ class RequestAppointment extends StatelessWidget {
           backgroundColor: Colors.white10,
           centerTitle: true,
           title: RowBackTitleIcon(
+            
             text: "My Nutritionist",
             iconOf: IconButton(
                         onPressed: () {},

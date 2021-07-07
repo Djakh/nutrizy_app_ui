@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/Navigation_pages/navigation0_page.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/Navigation_pages/navigation1_page.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/Navigation_pages/navigation2_page.dart';
-import 'package:nutrizy_app_ui/pages/head_pages/Navigation_pages/navigation3_page.dart';
 
 class HeadPageProvider extends ChangeNotifier {
 
@@ -22,8 +21,7 @@ switch (_currentNumber) {
     return Navigation1Page();
     case 2:
     return Navigation2Page();
-    case 3:
-    return Navigation3Page();
+
   default:
   return Navigation0Page();
 }
@@ -37,8 +35,7 @@ switch (_currentNumber) {
     return Navigation1AppBar();
     case 2:
     return Navigation2AppBar();
-    case 3:
-    return Navigation3AppBar();
+   
   default:
   return Navigation0AppBar();
 }

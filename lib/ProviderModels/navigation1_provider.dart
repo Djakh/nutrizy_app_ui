@@ -1,54 +1,119 @@
 import 'package:flutter/cupertino.dart';
 
 class Navigation1Provider extends ChangeNotifier {
-int _numberOfItem = 0;
-bool _firstBoolCart = false;
-bool _secondBoolCart = false;
-bool _thirdBoolCart = false;
-bool _forthBoolCart = false;
+
+
+int _firstCart = 0;
+int _secondCart = 0;
+int _thirdCart = 0;
+int _forthCart = 0;
 
 
 void changeFirstAddCart () {
-_firstBoolCart = !_firstBoolCart;
-if(_firstBoolCart) {
-  _numberOfItem ++;
+
+if(_firstCart == 0) {
+  _firstCart ++;
 } else {
-  _numberOfItem --;
+  _firstCart = 0;
 }
 notifyListeners();
 }
 
 void changeSecondAddCart () {
-_secondBoolCart = !_secondBoolCart;
-if(_secondBoolCart) {
-  _numberOfItem ++;
+if(_secondCart == 0) {
+  _secondCart ++;
 } else {
-  _numberOfItem --;
+  _secondCart = 0;
 }
 notifyListeners();
 }
 void changeThirdAddCart () {
-_thirdBoolCart = !_thirdBoolCart;
-if(_thirdBoolCart) {
-  _numberOfItem ++;
+if(_thirdCart == 0) {
+  _thirdCart ++;
 } else {
-  _numberOfItem --;
+  _thirdCart = 0;
 }
 notifyListeners();
 }
 void changeForthAddCart () {
-_forthBoolCart = !_forthBoolCart;
-if(_forthBoolCart) {
-  _numberOfItem ++;
+if(_forthCart == 0) {
+  _forthCart ++;
 } else {
-  _numberOfItem --;
+  _forthCart = 0;
 }
 notifyListeners();
 }
 
-get getfirstBoolCart => _firstBoolCart;
-get getsecondBoolCart => _secondBoolCart;
-get getThirdBoolCart => _thirdBoolCart;
-get getForthBoolCart => _forthBoolCart;
-get getNumberOfItem => _numberOfItem;
+int getCertainCartAmmount (int index) {
+switch (index) {
+  case 0:
+    return _firstCart;
+    case 1:
+    return _secondCart;
+    case 2:
+    return _thirdCart;
+    case 3:
+    return _forthCart;
+   
+  default:
+  return 0;
+}
+
+}
+void increaseCart (int index) {
+switch (index) {
+  case 0:
+_firstCart++;
+    break;
+    case 1:
+_secondCart++;
+    break;
+    case 2:
+_thirdCart++;
+    break;
+    case 3:
+_forthCart++;
+    break;
+   
+  default:
+  
+}
+notifyListeners();
+}
+
+void decreaseCart (int index) {
+switch (index) {
+  case 0:
+  if(_firstCart > 0) {
+    _firstCart--;
+  }
+
+    break;
+    case 1:
+if(_secondCart > 0) {
+    _secondCart--;
+  }
+    break;
+    case 2:
+if(_thirdCart > 0) {
+    _thirdCart--;
+  }
+    break;
+    case 3:
+if(_forthCart > 0) {
+    _forthCart--;
+  }
+    break;
+   
+  default:
+  
+}
+notifyListeners();
+}
+
+
+
+
+
+get getCommonNumber => _firstCart + _secondCart + _thirdCart + _forthCart;
 }

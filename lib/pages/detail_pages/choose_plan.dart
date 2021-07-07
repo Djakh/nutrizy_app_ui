@@ -115,7 +115,7 @@ class ChoosePlan extends StatelessWidget {
                     height: 1.5,
                     color: Colors.black),
               ),
-              ChoosePlanRichText(firstText:  "• Learn the truth about calorie intake and the secret to consuming the desired...", secondText: "Read more", textStyle:  const TextStyle(
+              ChoosePlanRichText(mySize: 15.0, firstText:  "• Learn the truth about calorie intake and the secret to consuming the desired...", secondText: "Read more", textStyle:  const TextStyle(
                 color: Colors.blue,),),
                 SizedBox(height: 40),
                 Padding(

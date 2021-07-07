@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutrizy_app_ui/ProviderModels/request_appointment_provider.dart';
-import 'package:nutrizy_app_ui/pages/head_pages/has_been_sent.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/other_pages/has_been_sent.dart';
 import 'package:nutrizy_app_ui/widgets/global_widgets/rounded_stretch_button.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';

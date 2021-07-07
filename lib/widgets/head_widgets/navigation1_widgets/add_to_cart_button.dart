@@ -12,12 +12,12 @@ final  bool myBool;
     
     return FlatButton(
       height: 47,
-      color: myBool ? Colors.blueAccent : Colors.white,
+      color: myBool ? Colors.white : Colors.blueAccent,
       minWidth: 80,
       onPressed: () {function();},
       child: Text(
         text,
-        style:  TextStyle(color: myBool ? Colors.white : Colors.blueAccent, fontSize: 20),
+        style:  TextStyle(color: myBool ? Colors.blueAccent : Colors.white, fontSize: 20),
       ),
       shape:  RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),

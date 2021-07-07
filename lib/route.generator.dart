@@ -7,16 +7,20 @@ import 'package:nutrizy_app_ui/pages/begin_pages/sign_in.dart';
 import 'package:nutrizy_app_ui/pages/begin_pages/sign_up.dart';
 import 'package:nutrizy_app_ui/pages/begin_pages/successful_created.dart';
 import 'package:nutrizy_app_ui/pages/begin_pages/verification_page.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/Navigation_pages/navigation3_page.dart';
 
-import 'package:nutrizy_app_ui/pages/head_pages/head_page.dart';
-import 'package:nutrizy_app_ui/pages/head_pages/program_details.dart';
-import 'package:nutrizy_app_ui/pages/head_pages/request_appointment.dart';
-import 'package:nutrizy_app_ui/pages/head_pages/test_page.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/other_pages/head_page.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/other_pages/my_cart.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/other_pages/my_profile_page.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/other_pages/program_details.dart';
+import 'package:nutrizy_app_ui/pages/head_pages/other_pages/request_appointment.dart';
+import 'package:nutrizy_app_ui/pages/test_page.dart';
 
 
 import 'pages/begin_pages/begin_page0.dart';
 import 'pages/begin_pages/initial_loading_page.dart';
 import 'pages/begin_pages/choosing_position.dart';
+
 
 class RouteGenerator {
   RouteGenerator._();
@@ -81,12 +85,21 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) =>  ProgramDetails(),
         );
+       case navigation3_page:
+        return MaterialPageRoute(
+          builder: (_) =>  Navigation3Page(),
+        );
+        case my_profile_page:
+        return MaterialPageRoute(
+          builder: (_) =>  MyProfilePage(),
+        );
+        
       default:
         throw Exception("Route not found");
     }
   }
 
-  static const String initalLoadingPage = '/program_details';
+  static const String initalLoadingPage = '/head_page';
   static const String beginPage0 = '/beginPage0';
   static const String choosingPosition = '/choosing_position';
   static const String sign_in = '/sign_in';
@@ -96,10 +109,14 @@ class RouteGenerator {
   static const String verification_page = '/verification_page';
   static const String detail_page = '/first_detail_page';
   static const String choose_plan = '/choose_plan';
-  static const String head_page = '/head_page';
+  static const String head_page = '/';
   static const String request_appointment = '/request_appointment';
   static const String test_page = '/test_page';
-  static const String program_details = '/';
+  static const String program_details = '/program_details';
+  static const String navigation3_page = '/navigation3_page';
+  static const String my_profile_page = '/my_profile_page';
+
+  
 
 
   

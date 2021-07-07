@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutrizy_app_ui/ProviderModels/head_page_Provider.dart';
+import 'package:nutrizy_app_ui/route.generator.dart';
 import 'package:provider/provider.dart';
 
 class HeadPage extends StatelessWidget {
@@ -12,7 +13,7 @@ class HeadPage extends StatelessWidget {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(90),
           child: _modelProvider.getCurrentAppBar()),
-      body: SingleChildScrollView(child: _modelProvider.getCurrentPage()),
+      body: _modelProvider.getCurrentPage(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _modelProvider.getCurrentNumber,
@@ -29,7 +30,10 @@ class HeadPage extends StatelessWidget {
               icon: Icon(Icons.notifications_outlined), title: Text(""))
         ],
         onTap: (index) {
-          _modelProvider.changeCurrnetNumber(index);
+          if(index < 3){_modelProvider.changeCurrnetNumber(index);}else{
+            Navigator.of(context).pushNamed(RouteGenerator.navigation3_page);
+          }
+          
         },
       ),
     );

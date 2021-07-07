@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class ChoosePlanRichText extends StatelessWidget {
   const ChoosePlanRichText({
-    Key? key, required this.firstText, required this.secondText, required this.textStyle,
+    Key? key, required this.firstText, required this.secondText, required this.textStyle,required this.mySize,
   }) : super(key: key);
 final String firstText;
 final String secondText;
 final TextStyle textStyle; 
+final double mySize;
   @override
   Widget build(BuildContext context) {
     return RichText(
@@ -14,7 +15,7 @@ final TextStyle textStyle;
       text: TextSpan(
         style: TextStyle(
           height: 1.5,
-          fontSize: 15.0,
+          fontSize: mySize,
           color: Colors.grey[800],
         ),
         children: <TextSpan>[

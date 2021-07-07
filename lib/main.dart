@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nutrizy_app_ui/ProviderModels/chat_page_provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/choose_plan_provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/detail_pages_provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/head_page_Provider.dart';
@@ -9,7 +10,7 @@ import 'package:nutrizy_app_ui/ProviderModels/navigation1_provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/request_appointment_provider.dart';
 import 'package:nutrizy_app_ui/route.generator.dart';
 import 'package:provider/provider.dart';
-
+import 'package:intl/date_symbol_data_local.dart';
 import 'ProviderModels/begin_pages_provider_model.dart';
 import 'ProviderModels/sign_up_provider.dart';
 
@@ -17,7 +18,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(MyApp());
+   initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -50,12 +51,15 @@ class MyApp extends StatelessWidget {
          ChangeNotifierProvider<Navigation1Provider>(
           create: (_) => Navigation1Provider(),
         ),
+        ChangeNotifierProvider<ChatPageProvider>(
+          create: (_) => ChatPageProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         
-        initialRoute: RouteGenerator.program_details,
+        initialRoute: RouteGenerator.head_page,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );
