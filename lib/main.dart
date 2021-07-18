@@ -8,6 +8,7 @@ import 'package:nutrizy_app_ui/ProviderModels/head_page_Provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/navigation0_provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/navigation1_provider.dart';
 import 'package:nutrizy_app_ui/ProviderModels/request_appointment_provider.dart';
+import 'package:nutrizy_app_ui/ProviderModels/settiings_provider.dart';
 import 'package:nutrizy_app_ui/route.generator.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -54,12 +55,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<ChatPageProvider>(
           create: (_) => ChatPageProvider(),
         ),
+        ChangeNotifierProvider<SettingsProvider>(
+          create: (_) => SettingsProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         
-        initialRoute: RouteGenerator.head_page,
+        initialRoute: RouteGenerator.register_doctor_page,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );

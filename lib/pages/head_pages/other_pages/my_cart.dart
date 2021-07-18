@@ -22,6 +22,7 @@ class MyCart extends StatelessWidget {
         backgroundColor: Colors.white10,
         centerTitle: true,
         title: RowBackTitleIcon(
+            mySize: 25,
             text:
                 "My Cart (${_modelProvider.getCertainCartAmmount(routeArgs.index)} Products)",
             iconOf: IconButton(

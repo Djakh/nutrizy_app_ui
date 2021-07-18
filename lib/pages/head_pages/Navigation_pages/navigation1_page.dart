@@ -243,6 +243,7 @@ class Navigation1AppBar extends StatelessWidget {
         backgroundColor: Colors.white10,
         centerTitle: true,
         title: RowBackTitleIcon(
+          mySize: 25,
             text: "Shop Health Products",
             iconOf: Stack(children: [
               IconButton(

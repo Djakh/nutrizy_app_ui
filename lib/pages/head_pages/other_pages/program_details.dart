@@ -15,7 +15,7 @@ class ProgramDetails extends StatelessWidget {
         backgroundColor: Colors.white10,
         centerTitle: true,
         title: RowBackTitleIcon(
-         
+         mySize: 25,
             text: "Program Details",
             iconOf: IconButton(
                 onPressed: () {},

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nutrizy_app_ui/widgets/head_widgets/gesture_arrow_button.dart';
 
 class RowBackTitleIcon extends StatelessWidget {
-  const RowBackTitleIcon({Key? key, required this.iconOf, required this.text,})
+  const RowBackTitleIcon({Key? key, required this.iconOf, required this.text, required this.mySize,})
       : super(key: key);
   final iconOf;
   final String text;
-  
+  final double mySize;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +18,7 @@ class RowBackTitleIcon extends StatelessWidget {
                 child: GestureArrowButton(
                     iconOf: Icon(
                       Icons.arrow_back,
-                      size: 25,
+                      size: mySize,
                       color: Colors.black,
                     ),
                     function: () {
@@ -32,7 +32,7 @@ class RowBackTitleIcon extends StatelessWidget {
                 Text(
                   text,
                   style:
-                      TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                      TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold),
                 ),
               ],
             )),

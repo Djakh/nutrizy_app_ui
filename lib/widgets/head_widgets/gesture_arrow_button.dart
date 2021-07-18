@@ -10,7 +10,7 @@ final iconOf;
                 onTap: () {function();},
                 child: Container(
                   decoration: BoxDecoration(
-                      border: Border.all(width: 2, color: Colors.grey),
+                      border: Border.all(width: 2, color: Colors.grey[400]!),
                       borderRadius: BorderRadius.circular(10)),
                   child: iconOf 
                 ),

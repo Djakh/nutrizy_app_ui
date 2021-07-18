@@ -23,6 +23,7 @@ class Navigation3Page extends StatelessWidget {
                 backgroundColor: Colors.indigo[50],
                 centerTitle: true,
                 title: RowBackTitleIcon(
+                  mySize: 25,
                     text: "Notifications",
                     iconOf: IconButton(
                         onPressed: () {},

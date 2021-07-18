@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutrizy_app_ui/route.generator.dart';
 import 'package:nutrizy_app_ui/widgets/app_bar_widgets/row_back_title_menu.dart';
 import 'package:nutrizy_app_ui/widgets/head_widgets/my_profile_widgets.dart/description_card.dart';
 import 'package:nutrizy_app_ui/widgets/head_widgets/my_profile_widgets.dart/information_card.dart';
@@ -18,6 +19,7 @@ class MyProfilePage extends StatelessWidget {
         backgroundColor: Colors.white10,
         centerTitle: true,
         title: RowBackTitleIcon(
+          mySize: 25,
             text: "My Profile",
             iconOf: GestureDetector(
               onTap: () {},
@@ -28,7 +30,9 @@ class MyProfilePage extends StatelessWidget {
                   radius: 21,
                   backgroundColor: Colors.white,
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteGenerator.settings_page);
+                      },
                       icon: Icon(
                         Icons.settings_outlined,
                         size: 25,
