@@ -4,6 +4,8 @@ import 'package:nutrizy_app_ui/widgets/registration_pages/two_buttons_choosing_p
 import 'package:nutrizy_app_ui/widgets/global_widgets/container_image.dart';
 import 'package:nutrizy_app_ui/widgets/app_bar_widgets/nutrizy_app_bar.dart';
 
+import '../../size_config.dart';
+
 class ChoosingPositon extends StatelessWidget {
   const ChoosingPositon({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class ChoosingPositon extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar:  PreferredSize(
-        preferredSize: Size.fromHeight(85),
+        preferredSize: Size.fromHeight(SizeConfig.h * 42.5),
         child: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
@@ -24,28 +26,28 @@ class ChoosingPositon extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           child:  Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding:  EdgeInsets.symmetric(horizontal: SizeConfig.w * 12.5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Center(
-                  child: const ContainerImage(
-                      height: 350.0,
-                      width: 350.0,
+                 Center(
+                  child:  ContainerImage(
+                      height: SizeConfig.h * 175.0,
+                      width: SizeConfig.w * 175.0,
                       asset: "assets/registration_first.png"),
                 ),
-              const  ContainerImage(
-                    height: 45.0, width: 45.0, asset: "assets/logo.png"),
-                const SizedBox(height: 20),
+                ContainerImage(
+                    height: SizeConfig.h * 22.5, width: SizeConfig.w * 22.5, asset: "assets/logo.png"),
+                 SizedBox(height: SizeConfig.h * 10),
                 Text(
                   slideList[1].text,
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: SizeConfig.w * 15,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
-               const SizedBox(height: 20),
+                SizedBox(height: SizeConfig.h * 10),
                 TwoButtonsChoosingPosition()
               ],
             ),

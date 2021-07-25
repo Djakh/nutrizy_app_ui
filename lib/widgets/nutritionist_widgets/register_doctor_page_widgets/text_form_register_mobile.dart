@@ -17,7 +17,6 @@ class TextFormRegisterMobile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        
           const SizedBox(
             height: 10.0,
           ),
@@ -29,26 +28,23 @@ class TextFormRegisterMobile extends StatelessWidget {
                   readOnly: true,
                   controller: controller,
                   obscureText: false,
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                   decoration: textInputDecoration.copyWith(
-                 
-              
                     hintStyle: TextStyle(fontSize: 20, color: Colors.grey[400]),
                   ),
-               
                 ),
               ),
               Expanded(
-               flex: 3,
+                flex: 3,
                 child: TextFormField(
-                  
                   obscureText: false,
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                   decoration: textInputDecoration.copyWith(
                     hintText: "Enter Mobile Number",
                     hintStyle: TextStyle(fontSize: 20, color: Colors.grey[400]),
                   ),
-                  
                 ),
               ),
             ],

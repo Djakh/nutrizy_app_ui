@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:nutrizy_app_ui/ProviderModels/navigation0_provider.dart';
 import 'package:nutrizy_app_ui/route.generator.dart';
+import 'package:nutrizy_app_ui/widgets/global_widgets/to_my_profile_avatar.dart';
 
 import 'package:nutrizy_app_ui/widgets/head_widgets/gesture_arrow_button.dart';
 import 'package:nutrizy_app_ui/widgets/head_widgets/navigation_card_asset_text.dart';
@@ -20,7 +21,7 @@ class Navigation0Page extends StatelessWidget {
     final _modelProvider = Provider.of<Navigation0Provider>(context);
 
     return SingleChildScrollView(
-          child: Container(
+      child: Container(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
@@ -66,10 +67,10 @@ class Navigation0Page extends StatelessWidget {
                 ),
                 GestureArrowButton(
                   iconOf: Icon(
-                      Icons.arrow_forward,
-                      size: 25,
-                      color: Colors.black,
-                    ),
+                    Icons.arrow_forward,
+                    size: 25,
+                    color: Colors.black,
+                  ),
                   function: () {
                     Navigator.of(context)
                         .pushNamed(RouteGenerator.request_appointment);
@@ -88,14 +89,13 @@ class Navigation0Page extends StatelessWidget {
               children: [
                 Text("Upcoming Diet Programs",
                     style: TextStyle(color: Colors.black, fontSize: 21)),
-                GestureArrowButton( iconOf: Icon(
-                      Icons.arrow_forward,
-                      size: 25,
-                      color: Colors.black,
-                    ),
-                  function: () {
-                    
-                  },
+                GestureArrowButton(
+                  iconOf: Icon(
+                    Icons.arrow_forward,
+                    size: 25,
+                    color: Colors.black,
+                  ),
+                  function: () {},
                 ),
               ],
             ),
@@ -160,16 +160,9 @@ class Navigation0AppBar extends StatelessWidget {
               SizedBox(
                 width: 32,
               ),
-              
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed(RouteGenerator.my_profile_page);
-                },
-                              child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 25,
-                  backgroundImage: AssetImage("assets/avatar_niger_image.jpg"),
-                ),
+              ToMyProfileAvatar(
+                image: "assets/avatar_niger_image.jpg",
+                navigateTo: RouteGenerator.my_profile_page,
               )
             ],
           )

@@ -3,6 +3,8 @@ import 'package:nutrizy_app_ui/ProviderModels/begin_pages_provider_model.dart';
 import 'package:nutrizy_app_ui/models/beginPagesModel.dart';
 import 'package:nutrizy_app_ui/widgets/beginPagesWidget/begin_wrap_pages.dart';
 
+import '../../size_config.dart';
+
 class PageViewBeginPages extends StatelessWidget {
   const PageViewBeginPages({
     Key? key,
@@ -17,8 +19,8 @@ class PageViewBeginPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child:  Container(
-        height: 500,
-        width: 450,
+        height: SizeConfig.h * 250,
+        width: SizeConfig.w * 225,
         child: PageView.builder(
           onPageChanged: (int index) {
             modelProvider.changeCurrentStatus(index);

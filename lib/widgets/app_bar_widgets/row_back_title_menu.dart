@@ -32,7 +32,7 @@ class RowBackTitleIcon extends StatelessWidget {
                 Text(
                   text,
                   style:
-                      TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold),
+                      TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ],
             )),

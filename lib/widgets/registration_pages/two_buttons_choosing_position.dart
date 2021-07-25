@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../route.generator.dart';
+import '../../size_config.dart';
 import '../global_widgets/rounded_border_stretch_button.dart';
 import '../global_widgets/rounded_stretch_button.dart';
 
@@ -12,7 +13,8 @@ class TwoButtonsChoosingPosition extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 18),
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.w * 2.5, vertical: SizeConfig.h * 9),
         child: Column(
           children: [
             RoundedStretchButton(
@@ -22,7 +24,7 @@ class TwoButtonsChoosingPosition extends StatelessWidget {
                       Navigator.of(context)
                           .pushNamed(RouteGenerator.sign_in_or_register_page)
                     }),
-            const SizedBox(height: 20),
+             SizedBox(height: SizeConfig.h * 10),
             RoundedBorderStretchButton(
               text: "I am Searching for Doctor",
               function: () {

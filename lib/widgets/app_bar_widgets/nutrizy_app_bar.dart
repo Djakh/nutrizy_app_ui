@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../size_config.dart';
+
 class NutrizyAppBarText extends StatelessWidget {
   const NutrizyAppBarText({
     Key? key,
@@ -8,23 +10,23 @@ class NutrizyAppBarText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-        padding: const EdgeInsets.only(top: 20),
+        padding:  EdgeInsets.only(top: SizeConfig.h * 10),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
          
-           const Text(
+           Text(
               "Nutr",
-              style:const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
-                  fontSize: 38,
+                  fontSize: SizeConfig.w * 19,
                   fontWeight: FontWeight.bold),
             ),
-          const  Text(
+            Text(
               "izy",
-              style: const TextStyle(
+              style:  TextStyle(
                   color: Colors.green,
-                  fontSize: 38,
+                  fontSize: SizeConfig.w * 19,
                   fontWeight: FontWeight.bold),
             ),
           ],

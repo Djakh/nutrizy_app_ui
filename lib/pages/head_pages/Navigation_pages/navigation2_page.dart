@@ -59,7 +59,7 @@ class Navigation2AppBar extends StatelessWidget {
         backgroundColor: Colors.white10,
         centerTitle: true,
         title: ChatAppBar(
-            
+            image: "assets/Djon.png",
             text: "John Terry",
             iconOf: IconButton(
                 onPressed: () {

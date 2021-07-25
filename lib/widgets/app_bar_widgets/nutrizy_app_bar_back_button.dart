@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../size_config.dart';
+
 class NutrizyAppBarBackButton extends StatelessWidget {
   const NutrizyAppBarBackButton({
     Key? key,
@@ -8,7 +10,7 @@ class NutrizyAppBarBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 17.0),
+      padding:  EdgeInsets.only(top: SizeConfig.h * 8.5),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -17,25 +19,25 @@ class NutrizyAppBarBackButton extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text(
+                Text(
                   "Nutr",
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
-                      fontSize: 38,
+                      fontSize: SizeConfig.w * 19,
                       fontWeight: FontWeight.bold),
                 ),
-                const Text(
+                Text(
                   "izy",
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.green,
-                      fontSize: 38,
+                      fontSize: SizeConfig.w * 19,
                       fontWeight: FontWeight.bold),
                 ),
               ],
             ),
           ),
           Positioned(
-            left: 10,
+            left: SizeConfig.w * 5,
             child: Align(
               alignment: Alignment.centerLeft,
               child: GestureDetector(
@@ -43,10 +45,10 @@ class NutrizyAppBarBackButton extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       border: Border.all(width: 2, color: Colors.grey),
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(SizeConfig.w * 5)),
                   child: Icon(
                     Icons.arrow_back_sharp,
-                    size: 30,
+                    size: SizeConfig.w * 15,
                     color: Colors.black,
                   ),
                 ),

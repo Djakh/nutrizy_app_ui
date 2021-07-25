@@ -3,6 +3,7 @@ import 'package:nutrizy_app_ui/ProviderModels/begin_pages_provider_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../route.generator.dart';
+import '../../size_config.dart';
 
 class RowButtonsBeginPages extends StatelessWidget {
   const RowButtonsBeginPages({
@@ -17,7 +18,7 @@ class RowButtonsBeginPages extends StatelessWidget {
   Widget build(BuildContext context) {
     final _modelProvider = Provider.of<BeginPagesProviderModel>(context);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
+      padding:  EdgeInsets.fromLTRB(SizeConfig.w * 6, SizeConfig.h * 8, SizeConfig.w * 6, SizeConfig.h * 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,11 +28,11 @@ class RowButtonsBeginPages extends StatelessWidget {
               },
               child: Text(
                 "skip",
-                style:  TextStyle(color: Colors.grey[700], fontSize: 20),
+                style:  TextStyle(color: Colors.grey[700], fontSize: SizeConfig.w * 10),
               )),
           FlatButton(
-            height: 40,
-            minWidth: 90,
+            height: SizeConfig.h * 20,
+            minWidth: SizeConfig.w * 45,
             color:  Colors.indigo[400],
             onPressed: () {
               if (_modelProvider.getCurrent < 2) {
@@ -42,12 +43,12 @@ class RowButtonsBeginPages extends StatelessWidget {
                 Navigator.pushNamed(context, RouteGenerator.choosingPosition);
               }
             },
-            child: const Text(
+            child:  Text(
               "next",
-              style: const TextStyle(fontSize: 18, color: Colors.white),
+              style:  TextStyle(fontSize: SizeConfig.w * 9, color: Colors.white),
             ),
             shape:  RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
+              borderRadius: BorderRadius.circular(SizeConfig.w * 9.0),
             ),
           )
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutrizy_app_ui/route.generator.dart';
+import 'package:nutrizy_app_ui/size_config.dart';
 
 class InitialLoadingPage extends StatefulWidget {
   const InitialLoadingPage({Key? key}) : super(key: key);
@@ -29,11 +30,11 @@ class _InitialLoadingPageState extends State<InitialLoadingPage> {
         backgroundColor: Colors.white,
         body: Center(
             child: Container(
-          width: 150,
-          height: 150,
-          decoration:  BoxDecoration(
-              borderRadius:  BorderRadius.circular(5),
-              image:const DecorationImage(
+          width: SizeConfig.w * 125,
+          height: SizeConfig.h * 125,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              image: const DecorationImage(
                 image: AssetImage("assets/initial_asset.png"),
               )),
         )));

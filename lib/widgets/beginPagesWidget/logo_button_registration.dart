@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../route.generator.dart';
+import '../../size_config.dart';
 
 class LogoButton extends StatelessWidget {
   const LogoButton({
@@ -10,21 +11,23 @@ class LogoButton extends StatelessWidget {
   final String asset;
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      height: 50,
-      minWidth: 170,
-      child: Container(
-        height: 20,
-        width: 20,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.fitWidth, image: AssetImage(asset))),
+    return Expanded(
+      child: FlatButton(
+        height: SizeConfig.h * 25,
+        minWidth: double.infinity,
+        child: Container(
+          height: SizeConfig.h * 10,
+          width: SizeConfig.w * 10,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fitWidth, image: AssetImage(asset))),
+        ),
+        onPressed: () { Navigator.pushNamed(context,
+                                        RouteGenerator.successful_created);},
+        shape: RoundedRectangleBorder(
+            side: const BorderSide(color: Colors.grey, width: 2),
+            borderRadius: BorderRadius.circular(SizeConfig.w * 25)),
       ),
-      onPressed: () { Navigator.pushNamed(context,
-                                      RouteGenerator.successful_created);},
-      shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.grey, width: 2),
-          borderRadius: BorderRadius.circular(50)),
     );
   }
 }

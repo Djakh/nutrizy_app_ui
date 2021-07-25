@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nutrizy_app_ui/nutritionist_pages/auth_pages/create_account_nutritionist.dart';
+import 'package:nutrizy_app_ui/nutritionist_pages/head_pages/head_page_n.dart';
+import 'package:nutrizy_app_ui/nutritionist_pages/head_pages/navigation3_page_n.dart';
 import 'package:nutrizy_app_ui/pages/detail_pages/choose_plan.dart';
 import 'package:nutrizy_app_ui/pages/detail_pages/detail_page.dart';
 import 'package:nutrizy_app_ui/pages/begin_pages/create_account.dart';
@@ -9,23 +11,21 @@ import 'package:nutrizy_app_ui/pages/begin_pages/sign_up.dart';
 import 'package:nutrizy_app_ui/pages/begin_pages/successful_created.dart';
 import 'package:nutrizy_app_ui/pages/begin_pages/verification_page.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/Navigation_pages/navigation3_page.dart';
-
 import 'package:nutrizy_app_ui/pages/head_pages/other_pages/head_page.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/other_pages/my_profile_page.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/other_pages/program_details.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/other_pages/request_appointment.dart';
 import 'package:nutrizy_app_ui/pages/head_pages/other_pages/settings_page.dart';
 import 'package:nutrizy_app_ui/pages/test_page.dart';
-
-
 import 'nutritionist_pages/auth_pages/register_doctor_page.dart';
 import 'nutritionist_pages/auth_pages/sign_in_or_register_page.dart';
 import 'nutritionist_pages/auth_pages/verify_otp_page.dart';
-
+import 'nutritionist_pages/head_pages/other_pages/add_products_page_n.dart';
+import 'nutritionist_pages/head_pages/other_pages/my_profile_n.dart';
+import 'nutritionist_pages/head_pages/other_pages/patient_details_page_n.dart';
 import 'pages/begin_pages/begin_page0.dart';
 import 'pages/begin_pages/initial_loading_page.dart';
 import 'pages/begin_pages/choosing_position.dart';
-
 
 class RouteGenerator {
   RouteGenerator._();
@@ -78,52 +78,69 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const HeadPage(),
         );
-          case request_appointment:
+      case request_appointment:
         return MaterialPageRoute(
-          builder: (_) =>  RequestAppointment(),
+          builder: (_) => RequestAppointment(),
         );
-        case test_page:
+      case test_page:
         return MaterialPageRoute(
-          builder: (_) =>  TestPage(),
+          builder: (_) => TestPage(),
         );
-        case program_details:
+      case program_details:
         return MaterialPageRoute(
-          builder: (_) =>  ProgramDetails(),
+          builder: (_) => ProgramDetails(),
         );
-       case navigation3_page:
+      case navigation3_page:
         return MaterialPageRoute(
-          builder: (_) =>  Navigation3Page(),
+          builder: (_) => Navigation3Page(),
         );
-        case my_profile_page:
+      case my_profile_page:
         return MaterialPageRoute(
-          builder: (_) =>  MyProfilePage(),
+          builder: (_) => MyProfilePage(),
         );
-        case settings_page:
+      case settings_page:
         return MaterialPageRoute(
-          builder: (_) =>  SettingsPage(),
+          builder: (_) => SettingsPage(),
         );
-        case sign_in_or_register_page:
+      case sign_in_or_register_page:
         return MaterialPageRoute(
-          builder: (_) =>  SignInOrRegisterPage(),
+          builder: (_) => SignInOrRegisterPage(),
         );
-        case register_doctor_page:
+      case register_doctor_page:
         return MaterialPageRoute(
-          builder: (_) =>  RegisterDoctorPage(),
+          builder: (_) => RegisterDoctorPage(),
         );
-        case veirfy_otp_page:
+      case veirfy_otp_page:
         return MaterialPageRoute(
-          builder: (_) =>  VerifyOtpPage(),
+          builder: (_) => VerifyOtpPage(),
         );
-         case create_account_nutritionist:
+      case create_account_nutritionist:
         return MaterialPageRoute(
-          builder: (_) =>  CreateAccountNutritionist(),
+          builder: (_) => CreateAccountNutritionist(),
         );
+      case head_page_n:
+        return MaterialPageRoute(
+          builder: (_) => HeadPageN(),
+        );
+      case add_product_page_n:
+        return MaterialPageRoute(
+          builder: (_) => AddProductPageN(),
+        );
+      case navigation3_page_n:
+        return MaterialPageRoute(
+          builder: (_) => Navigation3PageN(),
+        );
+      case my_profile_page_n:
+        return MaterialPageRoute(
+          builder: (_) => MyProfileN(),
+        );
+
       default:
         throw Exception("Route not found");
     }
   }
 
-  static const String initalLoadingPage = '/register_doctor_page';
+  static const String initalLoadingPage = '/';
   static const String beginPage0 = '/beginPage0';
   static const String choosingPosition = '/choosing_position';
   static const String sign_in = '/sign_in';
@@ -141,12 +158,12 @@ class RouteGenerator {
   static const String my_profile_page = '/my_profile_page';
   static const String settings_page = '/settings_page';
   static const String sign_in_or_register_page = '/sign_in_or_register_page';
-  static const String register_doctor_page = '/';
+  static const String register_doctor_page = '/register_doctor_page';
   static const String veirfy_otp_page = '/veirfy_otp_page';
-  static const String create_account_nutritionist = '/create_account_nutritionist';
-
-  
-
-
-  
+  static const String create_account_nutritionist =
+      '/create_account_nutritionist';
+  static const String head_page_n = '/head_page_n';
+  static const String add_product_page_n = '/add_product_page_n';
+  static const String navigation3_page_n = '/navigation3_page_n';
+  static const String my_profile_page_n = '/my_profile_page_n';
 }

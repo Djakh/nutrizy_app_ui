@@ -5,11 +5,11 @@ class ChatAppBar extends StatelessWidget {
   const ChatAppBar({
     Key? key,
     required this.iconOf,
-    required this.text,
+    required this.text,required this.image,
   }) : super(key: key);
   final iconOf;
   final String text;
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,7 +36,7 @@ class ChatAppBar extends StatelessWidget {
                   child: Stack(children: [
                     CircleAvatar(
                       radius: 17,
-                      backgroundImage: AssetImage("assets/Djon.png"),
+                      backgroundImage: AssetImage(image),
                     ),
                     Positioned(
                       top: 24,
@@ -55,7 +55,7 @@ class ChatAppBar extends StatelessWidget {
                 Text(
                   text,
                   style: TextStyle(
-                      color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+                      color: Colors.black, fontSize: 21, fontWeight: FontWeight.bold),
                 ),
               ],
             )),

@@ -12,10 +12,10 @@ class RoundedSecondButton extends StatelessWidget {
       minWidth: 80,
       onPressed: () {},
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 5.0),
         child: Text(
           'View Details',
-          style: TextStyle(color: Colors.black, fontSize: 18,),
+          style: TextStyle(color: Colors.black, fontSize: 17,),
         ),
       ),
       

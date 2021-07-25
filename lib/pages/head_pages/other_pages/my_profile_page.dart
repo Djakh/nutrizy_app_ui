@@ -56,6 +56,10 @@ class MyProfilePage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
+              Text('Goal Description', style: TextStyle(fontSize: 19),),
+              SizedBox(
+                height: 10,
+              ),
               DescriptionCard(),
               SizedBox(
                 height: 20,

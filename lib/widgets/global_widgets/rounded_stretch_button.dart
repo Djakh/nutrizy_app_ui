@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../size_config.dart';
+
 
 class RoundedStretchButton extends StatelessWidget {
   
@@ -10,16 +12,16 @@ class RoundedStretchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      height: 50,
+      height: SizeConfig.h * 25,
       minWidth: double.infinity,
       color: color,
       onPressed: () {function();} ,
       child: Text(
        text,
-        style: const TextStyle(color: Colors.white, fontSize: 20),
+        style:  TextStyle(color: Colors.white, fontSize: SizeConfig.w * 10),
       ),
       shape: RoundedRectangleBorder(
-          borderRadius:  BorderRadius.circular(50)),
+          borderRadius:  BorderRadius.circular(SizeConfig.w * 25)),
     );
   }
 }

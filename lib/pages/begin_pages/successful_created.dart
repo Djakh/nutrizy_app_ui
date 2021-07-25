@@ -3,6 +3,7 @@ import 'package:nutrizy_app_ui/widgets/app_bar_widgets/nutrizy_app_bar_back_butt
 import 'package:nutrizy_app_ui/widgets/global_widgets/rounded_stretch_button.dart';
 
 import '../../route.generator.dart';
+import '../../size_config.dart';
 
 class SuccessfulCreated extends StatelessWidget {
   const SuccessfulCreated({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class SuccessfulCreated extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(75),
+        preferredSize: Size.fromHeight(SizeConfig.h * 37.5),
         child: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
@@ -26,39 +27,43 @@ class SuccessfulCreated extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 350,
+                height: SizeConfig.h * 175,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("assets/successfull_created3.jpg"))),
               ),
               Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: EdgeInsets.all(SizeConfig.w * 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Icon(
                       Icons.check_circle,
                       color: Colors.green,
-                      size: 70,
+                      size: SizeConfig.w * 35,
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: SizeConfig.h * 10),
                     Text(
                       "Congratulations",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: SizeConfig.w * 9,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: SizeConfig.h * 5),
                     Text("You have successfully Created an Account",
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                            fontSize: 27, fontWeight: FontWeight.bold)),
-                            SizedBox(height: 50),
+                            fontSize: SizeConfig.w * 13.5,
+                            fontWeight: FontWeight.bold)),
+                    SizedBox(height: SizeConfig.h * 25),
                     RoundedStretchButton(
                         color: Colors.green[600],
                         text: "Get Started Now",
-                        function: () => {Navigator.of(context).pushNamed(RouteGenerator.detail_page)}),
+                        function: () => {
+                              Navigator.of(context)
+                                  .pushNamed(RouteGenerator.detail_page)
+                            }),
                   ],
                 ),
               )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../size_config.dart';
+
 class RichTextRegistration extends StatelessWidget {
   const RichTextRegistration({
     Key? key,
@@ -11,7 +13,7 @@ class RichTextRegistration extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         style: TextStyle(
-          fontSize: 18.0,
+          fontSize: SizeConfig.w * 9.0,
           color: Colors.grey[800],
         ),
         children: <TextSpan>[

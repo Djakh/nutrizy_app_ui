@@ -7,6 +7,8 @@ import 'package:nutrizy_app_ui/widgets/app_bar_widgets/nutrizy_app_bar.dart';
 import 'package:nutrizy_app_ui/widgets/beginPagesWidget/row_slide_dots.dart';
 import 'package:provider/provider.dart';
 
+import '../../size_config.dart';
+
 class BeginPage0 extends StatefulWidget {
   const BeginPage0({Key? key}) : super(key: key);
 
@@ -35,7 +37,7 @@ class _BeginPage0State extends State<BeginPage0> {
     final _modelProvider = Provider.of<BeginPagesProviderModel>(context);
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(85),
+          preferredSize: Size.fromHeight(SizeConfig.h * 42.5),
           child:  AppBar(
             backgroundColor: Colors.white,
             elevation: 0,
@@ -57,7 +59,7 @@ class _BeginPage0State extends State<BeginPage0> {
                           modelProvider: _modelProvider,
                           pageController: _pageController),
                       Container(
-                        margin: const EdgeInsets.only(bottom: 35),
+                        margin:  EdgeInsets.only(bottom: SizeConfig.h * 42.5),
                         child:  RowSlideDots(modelProvider: _modelProvider),
                       ),
                       RowButtonsBeginPages(pageController: _pageController),

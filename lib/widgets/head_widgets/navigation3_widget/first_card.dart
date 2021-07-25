@@ -23,8 +23,7 @@ class FirstCard extends StatelessWidget {
                   children: [
                     CircleAvatar(
                         radius: 23,
-                        backgroundImage:
-                            AssetImage('assets/Djon.png')),
+                        backgroundImage: AssetImage('assets/Djon.png')),
                     SizedBox(width: 25),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,8 +51,8 @@ class FirstCard extends StatelessWidget {
                                 height: 25,
                                 width: 25,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(5)),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5)),
                                     image: DecorationImage(
                                         image: AssetImage(
                                             'assets/grey_clock.png')))),
@@ -70,7 +69,12 @@ class FirstCard extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 15),
-                        RoundedButton()
+                        RoundedButton(
+                          textColor: Colors.white,
+                          buttonColor: Colors.blueAccent[700]!,
+                          text: 'Join Chat',
+                          side: BorderSide.none,
+                        )
                       ],
                     )
                   ],
